@@ -12,7 +12,7 @@ function TravelList() {
   const getTravels = async ()=>{
     try {
       const response = await axios.get('http://localhost:5005/api/travels')
-      console.log(response.data)
+      console.log('aqui', response.data)
       setAllTravels(response.data)
       setIsFetching(false)
     } catch (error) {
@@ -26,9 +26,8 @@ function TravelList() {
   return (
     
     <div>
-    <h4>probando</h4>
       {allTravels.map((eachTravel)=>{
-        return <p key={eachTravel._id}>{eachTravel.date}</p>     
+        return <p key={eachTravel._id}>{eachTravel.from}-{eachTravel.to}</p>     
       })}
 
     </div>

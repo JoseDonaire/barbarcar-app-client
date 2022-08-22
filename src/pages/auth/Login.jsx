@@ -19,7 +19,6 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // ... login logic here
     const user ={
       username: username,
       password: password

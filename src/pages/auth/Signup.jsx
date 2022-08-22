@@ -17,7 +17,6 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    // ... signup logic here
     const user ={
       username: username,
       email: email,
