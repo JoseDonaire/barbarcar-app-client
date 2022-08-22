@@ -1,8 +1,13 @@
 import React from 'react'
+import TravelList from '../components/TravelList'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+    <h3>Travels List</h3>
+    <TravelList/>
+
+    </div>
   )
 }
 
