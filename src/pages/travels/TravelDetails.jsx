@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import axios from 'axios'
 import { useParams,useNavigate } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 
 function TravelDetails() {
 
@@ -43,6 +43,7 @@ function TravelDetails() {
       <p>Seats Car:{travel.seatsCar}</p>
       <p>Price:{travel.price}</p>
       <p>Owner:{travel.owner}</p>
+
       
     </div>
   )
