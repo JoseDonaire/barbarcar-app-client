@@ -7,7 +7,7 @@ function Profile() {
     <div>
     imagen de mi coche
     <Link to= {'/travels/add'}> <button>Add Travel</button></Link>
-    <MyTravels/>
+    {/*<MyTravels/> */}
     reseñas
 
     </div>
