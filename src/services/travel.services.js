@@ -1,6 +1,8 @@
 import service from './config.services'
 
-//meter service travelList
+const travelListService = (allTravels)=>{
+    return service.get(`/travels`,allTravels)
+}
 
 const addTravelService = (newTravel)=>{
     return service.post(`/travels/create`,newTravel)
@@ -19,6 +21,7 @@ const travelDeleteService = (idTravel)=>{
 
 
 export{
+    travelListService,
     addTravelService,
     myTravelService,
     travelUpdateService,

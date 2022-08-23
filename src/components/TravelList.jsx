@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { travelListService } from '../services/travel.services'
 
 function TravelList() {
   const [allTravels,setAllTravels]= useState([])
@@ -12,7 +13,7 @@ function TravelList() {
   },[])
   const getTravels = async ()=>{
     try {
-      const response = await axios.get('http://localhost:5005/api/travels')
+      const response = await travelListService(allTravels)
       console.log('aqui', response.data)
       setAllTravels(response.data)
       setIsFetching(false)
