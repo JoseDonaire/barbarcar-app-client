@@ -6,7 +6,7 @@ function Home() {
     <div>
     <h3>Travels List</h3>
     <TravelList/>
-
+    
     </div>
   )
 }

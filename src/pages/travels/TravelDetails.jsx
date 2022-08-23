@@ -42,7 +42,7 @@ function TravelDetails() {
       <p>Bags:{travel.bags}</p>
       <p>Seats Car:{travel.seatsCar}</p>
       <p>Price:{travel.price}</p>
-      <p>Owner:{travel.owner}</p>
+      <p>Owner:{travel.owner}</p> {/*enviar desde aquí al profile con un populate */}
 
       
     </div>
