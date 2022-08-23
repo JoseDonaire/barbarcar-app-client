@@ -10,7 +10,7 @@ const myTravelService = (idTravel)=>{
     return  service.get(`/travels/${idTravel}`)
 }
 
-const travelEditService = (idTravel,updateTravel)=>{
+const travelUpdateService = (idTravel,updateTravel)=>{
     return service.patch(`/travels/${idTravel}`,updateTravel)
 }
 const travelDeleteService = (idTravel)=>{
@@ -21,7 +21,7 @@ const travelDeleteService = (idTravel)=>{
 export{
     addTravelService,
     myTravelService,
-    travelEditService,
+    travelUpdateService,
     travelDeleteService
 
 }

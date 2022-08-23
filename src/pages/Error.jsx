@@ -2,7 +2,9 @@ import React from 'react'
 
 function Error() {
   return (
-    <div>Error</div>
+    <div>
+    <img src="/public/error.png" alt="error" />
+    </div>
   )
 }
 
