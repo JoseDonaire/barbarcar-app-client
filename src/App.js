@@ -30,8 +30,8 @@ function App() {
     <Route path='/signup' element={<Signup/>} />
 
     <Route path='/travels/add' element={<AddTravel/>} />
-    <Route path='/travels/:id/details' element={<TravelDetails/>} />
-    <Route path='/travels/:id/edit' element={<TravelEdit/>} />
+    <Route path='/travels/:idTravel/details' element={<TravelDetails/>} />
+    <Route path='/travels/:idTravel/edit' element={<TravelEdit/>} />
     <Route path='/profile' element={<Profile/>} />
     <Route path='/profile/driver' element={<ProfileDriver/>} />
 

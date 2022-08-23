@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function TravelList() {
   const [allTravels,setAllTravels]= useState([])
@@ -22,12 +23,15 @@ function TravelList() {
   if(isFetching === true){
     return <h3>...</h3>
   }
-// no está funcionando
+
   return (
     
     <div>
       {allTravels.map((eachTravel)=>{
-        return <p key={eachTravel._id}>{eachTravel.from}-{eachTravel.to}</p>     
+        return <p key={eachTravel._id}>
+        <Link to={`/travels/${eachTravel._id}/details`}>{eachTravel.from}-{eachTravel.to}</Link>  
+        </p>   
+        
       })}
 
     </div>
