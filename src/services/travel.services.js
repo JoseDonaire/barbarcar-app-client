@@ -1,6 +1,6 @@
 import service from './config.services'
 
-
+//meter service travelList
 
 const addTravelService = (newTravel)=>{
     return service.post(`/travels/create`,newTravel)
