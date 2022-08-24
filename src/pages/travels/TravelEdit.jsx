@@ -26,20 +26,20 @@ function TravelEdit() {
   const handlePriceChange = (event) => setPrice(event.target.value);
 
   useEffect(() => {
-    getTravelDetails();
+    getTravelDetails()
   }, []);
 
   const getTravelDetails = async () => {
     try {
-      const response = await getTravelDetails(idTravel);
+      const response = await travelUpdateService(idTravel);
       console.log(response.data);
-      handleDateChange(response.data.date);
-      handleFromChange(response.data.from);
-      handleToChange(response.data.to);
-      handleCarChange(response.data.car);
-      handleBagsChange(response.data.bags);
-      handleSeatsCarChange(response.data.seatsCar);
-      handlePriceChange(response.data.price);
+      setDate(response.data.date);
+      setFrom(response.data.from);
+      setTo(response.data.to);
+      setCar(response.data.car);
+      setBags(response.data.bags);
+      setSeatsCar(response.data.seatsCar);
+      setPrice(response.data.price);
     } catch (error) {
       navigate("/error");
     }

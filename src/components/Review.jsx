@@ -1,11 +1,13 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { newReviewService } from '../services/review.services'
 
 function Review() {
 
   const navigate = useNavigate()
+
+  const {idTravel} =useParams()
 
   const[text,setText]=useState('')
 
@@ -16,11 +18,13 @@ function Review() {
       text:text
     }
     try {
-      await newReviewService(newReview)
+      const response = await newReviewService(idTravel,newReview)
+      console.log('creado', response.data)
     } catch (error) {
       navigate('/error')
     }
   }
+  
 
   return (
     <div>

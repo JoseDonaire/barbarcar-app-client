@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import axios from 'axios'
 import { useParams,useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import Review from '../../components/Review'
 
 function TravelDetails() {
 
@@ -44,7 +44,7 @@ function TravelDetails() {
       <p>Price:{travel.price}</p>
       <p>Owner:{travel.owner}</p> {/*enviar desde aquí al profile con un populate y un link */}
 
-      
+      <Review/>
     </div>
   )
 }

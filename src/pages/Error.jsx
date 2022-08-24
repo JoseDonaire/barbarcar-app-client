@@ -3,7 +3,7 @@ import React from 'react'
 function Error() {
   return (
     <div>
-    <img src="/public/error.png" alt="error" />
+    <img src="../../public/images/error.png" alt="error" width={'300'} />
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {myTravelService,travelDeleteService} from '../services/travel.services'
 
 function MyTravels() {
 
   const navigate = useNavigate()
-
+  
 
 
   const [myTravels,setMyTravels]= useState([])
@@ -27,9 +27,9 @@ function MyTravels() {
     }
   }
 
-  const handleDelete = async ()=>{
+  const handleDelete = async (idTravel)=>{
     try {
-      await travelDeleteService()
+      await travelDeleteService(idTravel)
       navigate('/profile')
     } catch (error) {
       navigate('/error')
@@ -48,7 +48,7 @@ function MyTravels() {
         return <p key={eachTravel._id}>
         <Link to={`/travels/${eachTravel._id}/details`}>{eachTravel.from}-{eachTravel.to}</Link>
         <Link to={`/travels/${eachTravel._id}/edit`}><button>Edit</button></Link>
-        <button onClick={handleDelete}>Delete</button>  
+        <button onClick={()=>handleDelete(eachTravel._id)}>Delete</button>  
         </p>   
         
       })}

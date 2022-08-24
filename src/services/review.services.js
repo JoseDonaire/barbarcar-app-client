@@ -1,11 +1,11 @@
 import service from './config.services'
 
-const getReviewService = (reviewId) => {
-    return service.get(`/review/${reviewId}`)
+const getReviewService = () => {
+    return service.get(`/review/driver`)
 }
 
-const newReviewService = (reviewId) => {
-    return service.post(`/review/${reviewId}`)
+const newReviewService = (idTravel,newReview) => {
+    return service.post(`/review/${idTravel}`,newReview)
 }
 
 //delete
