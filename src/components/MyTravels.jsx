@@ -7,7 +7,7 @@ function MyTravels() {
 
   const navigate = useNavigate()
 
-  const {idTravel}= useParams()
+
 
   const [myTravels,setMyTravels]= useState([])
   const [isFetching,setIsFetching]=useState(true)
@@ -17,9 +17,9 @@ function MyTravels() {
   },[])
   const getTravels = async ()=>{
     try {
-      const response = await myTravelService(idTravel)
+      const response = await myTravelService()
       console.log('mis viajes', response.data)
-      
+
       setMyTravels(response.data)
       setIsFetching(false)
     } catch (error) {
@@ -29,8 +29,8 @@ function MyTravels() {
 
   const handleDelete = async ()=>{
     try {
-      await travelDeleteService(idTravel)
-      navigate('/travels')
+      await travelDeleteService()
+      navigate('/profile')
     } catch (error) {
       navigate('/error')
       
@@ -46,12 +46,13 @@ function MyTravels() {
     <div>
       {myTravels.map((eachTravel)=>{
         return <p key={eachTravel._id}>
-        <Link to={`/travels/${eachTravel._id}/details`}>{eachTravel.from}-{eachTravel.to}</Link>  
+        <Link to={`/travels/${eachTravel._id}/details`}>{eachTravel.from}-{eachTravel.to}</Link>
+        <Link to={`/travels/${eachTravel._id}/edit`}><button>Edit</button></Link>
+        <button onClick={handleDelete}>Delete</button>  
         </p>   
         
       })}
-      <Link to={`/travels/${idTravel}/edit`}><button>Edit</button></Link>
-      <button onClick={handleDelete}>Delete</button>
+      
     </div>
   )
 }

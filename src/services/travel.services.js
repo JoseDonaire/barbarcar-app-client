@@ -1,15 +1,15 @@
 import service from './config.services'
 
-const travelListService = (allTravels)=>{
-    return service.get(`/travels`,allTravels)
+const travelListService = ()=>{
+    return service.get(`/travels`)
 }
 
 const addTravelService = (newTravel)=>{
     return service.post(`/travels/create`,newTravel)
 }
 
-const myTravelService = (idTravel)=>{
-    return  service.get(`/travels/${idTravel}`)
+const myTravelService = ()=>{
+    return  service.get(`/travels/mytravels`)
 }
 
 const travelUpdateService = (idTravel,updateTravel)=>{

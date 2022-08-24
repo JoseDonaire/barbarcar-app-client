@@ -12,7 +12,7 @@ function TravelList() {
   },[])
   const getTravels = async ()=>{
     try {
-      const response = await travelListService(allTravels)
+      const response = await travelListService()
       console.log('aqui', response.data)
       setAllTravels(response.data)
       setIsFetching(false)
