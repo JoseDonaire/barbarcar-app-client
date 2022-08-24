@@ -4,6 +4,10 @@ const travelListService = ()=>{
     return service.get(`/travels`)
 }
 
+const travelDetailsService = (idTravel)=>{
+    return service.get(`/travels/${idTravel}`)
+}
+
 const addTravelService = (newTravel)=>{
     return service.post(`/travels/create`,newTravel)
 }
@@ -22,6 +26,7 @@ const travelDeleteService = (idTravel)=>{
 
 export{
     travelListService,
+    travelDetailsService,
     addTravelService,
     myTravelService,
     travelUpdateService,

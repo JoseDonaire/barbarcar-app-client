@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { travelUpdateService } from "../../services/travel.services";
-
+import { travelDetailsService } from "../../services/travel.services";
 
 function TravelEdit() {
   const navigate = useNavigate();
@@ -31,15 +31,15 @@ function TravelEdit() {
 
   const getTravelDetails = async () => {
     try {
-      const response = await travelUpdateService(idTravel);
-      console.log(response.data);
-      setDate(response.data.date);
-      setFrom(response.data.from);
-      setTo(response.data.to);
-      setCar(response.data.car);
-      setBags(response.data.bags);
-      setSeatsCar(response.data.seatsCar);
-      setPrice(response.data.price);
+      const response = await travelDetailsService(idTravel);
+      console.log(response.data)
+      setDate(response.data.date)
+      setFrom(response.data.from)
+      setTo(response.data.to)
+      setCar(response.data.car)
+      setBags(response.data.bags)
+      setSeatsCar(response.data.seatsCar)
+      setPrice(response.data.price)
     } catch (error) {
       navigate("/error");
     }
@@ -57,6 +57,7 @@ function TravelEdit() {
     }
     try {
       await travelUpdateService(idTravel,travelObj)
+      navigate('/profile')
     } catch (error) {
       navigate('/error')
     }

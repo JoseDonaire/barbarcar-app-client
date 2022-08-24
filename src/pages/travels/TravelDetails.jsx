@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import axios from 'axios'
+import { travelDetailsService } from '../../services/travel.services'
 import { useParams,useNavigate } from 'react-router-dom'
 import Review from '../../components/Review'
 
@@ -19,7 +19,7 @@ function TravelDetails() {
   const getTravel = async () => {
 
     try {
-      const response = await axios.get(`http://localhost:5005/api/travels/${idTravel}`)
+      const response = await travelDetailsService(idTravel)
       console.log('detalles viaje',response.data)
       setTravel(response.data)
       setIsFetching(false)

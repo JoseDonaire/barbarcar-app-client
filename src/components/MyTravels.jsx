@@ -30,6 +30,7 @@ function MyTravels() {
   const handleDelete = async (idTravel)=>{
     try {
       await travelDeleteService(idTravel)
+      getTravels()
       navigate('/profile')
     } catch (error) {
       navigate('/error')
