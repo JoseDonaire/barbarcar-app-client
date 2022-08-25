@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import {  useNavigate } from 'react-router-dom'
+import {  useNavigate, useParams } from 'react-router-dom'
 import { getReviewService } from '../services/review.services'
 
 
 function GetReview() {
 
+    const {idDriver} = useParams()
     const navigate = useNavigate()
 
     const [listReviews,setListReviews]=useState([])
@@ -17,7 +18,7 @@ function GetReview() {
 
     const getListReviews = async ()=>{
         try {
-            const response = await getReviewService(listReviews)
+            const response = await getReviewService(idDriver)
             console.log(response.data)
             setListReviews(response.data)
             setIsFetching(false)

@@ -69,6 +69,24 @@ background: linear-gradient(57deg, rgb(0, 96, 59) 12%, rgb(45, 62, 15) 100%);
   color: rgb(54, 53, 53);
 }
 
+.divdetails{
+  display: flex;
+  flex-direction: column;
+  justify-content: center ;
+  align-items: center;
+  margin-top: 4em;
+  display: flex;
+  background: #ffffff;
+  box-sizing: border-box;
+  border: 2px solid black ;
+  max-width: 600px;
+  background: #C9C9C8;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: rgb(54, 53, 53);
+}
+
 
 .myButton {
 	box-shadow:inset 0px 1px 0px 0px #a4e271;

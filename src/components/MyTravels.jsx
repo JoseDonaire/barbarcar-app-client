@@ -44,15 +44,19 @@ function MyTravels() {
 
   return (
     
-    <div className='div'>
+    <div className='all'>
       {myTravels.map((eachTravel)=>{
-        return <p key={eachTravel._id}>
+        return (
+          <div className='div'>
+          <p key={eachTravel._id}>
         <Link to={`/travels/${eachTravel._id}/details`} className='link'>{eachTravel.from}-{eachTravel.to}</Link>
         <br />
         <Link to={`/travels/${eachTravel._id}/edit`} className='link'><button className="myButton">Edit</button></Link>
         <button onClick={()=>handleDelete(eachTravel._id)} className="myButton">Delete</button>  
         </p>   
         
+          </div>
+        )
       })}
       
     </div>

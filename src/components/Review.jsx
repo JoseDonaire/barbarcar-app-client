@@ -7,7 +7,7 @@ function Review() {
 
   const navigate = useNavigate()
 
-  const {idTravel} =useParams()
+  const {idDriver} =useParams()
 
   const[text,setText]=useState('')
 
@@ -18,7 +18,7 @@ function Review() {
       text:text
     }
     try {
-      const response = await newReviewService(idTravel,newReview)
+      const response = await newReviewService(idDriver,newReview)
       console.log('creado', response.data)
     } catch (error) {
       navigate('/error')

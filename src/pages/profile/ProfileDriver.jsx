@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import GetReview from '../../components/GetReview'
 import { profileServiceDriver } from '../../services/profile.services'
-import { useState } from 'react'
+import Review from '../../components/Review'
 
 function ProfileDriver() {
   
@@ -10,6 +10,7 @@ function ProfileDriver() {
   const navigate = useNavigate()
 
   const[profileDriver, setProfileDriver] = useState(null)
+  const[isFetching,setIsFetching]=useState(true)
 
   useEffect(()=>{
     getProfileDriver()
@@ -18,19 +19,26 @@ function ProfileDriver() {
   const getProfileDriver = async ()=> {
       try {
    const response = await profileServiceDriver(idDriver)
-   console.log(response.data)
+   console.log('hola',response.data)
    setProfileDriver(response.data)
-
+   setIsFetching(false)
     
    } catch (error) {
     navigate ('/error')
     }
   }
 
+  if(isFetching === true){
+    return <h3>...</h3>
+  }
 
   return (
     <div>
-    <h1>hola</h1>
+    <h1>{profileDriver.username} Profile</h1>
+
+    
+    <Review/>
+    <GetReview/>
     </div>
   )
 }

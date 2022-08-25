@@ -1,9 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { travelListService } from '../services/travel.services'
+ 
 
 function TravelList() {
+
+  const navigate = useNavigate()
+
   const [allTravels,setAllTravels]= useState([])
   const [isFetching,setIsFetching]=useState(true)
 
@@ -17,7 +21,7 @@ function TravelList() {
       setAllTravels(response.data)
       setIsFetching(false)
     } catch (error) {
-      
+      navigate('/error')
     }
   }
   if(isFetching === true){
