@@ -19,8 +19,8 @@ import ProfileDriver from './pages/profile/ProfileDriver';
 function App() {
   return (
     <div className="App">
-
-    <Navbar/>
+    <div className="navbar"><Navbar/></div>
+    
 
 
     <Routes>
@@ -33,7 +33,7 @@ function App() {
     <Route path='/travels/:idTravel/details' element={<TravelDetails/>} />
     <Route path='/travels/:idTravel/edit' element={<TravelEdit/>} />
     <Route path='/profile' element={<Profile/>} />
-    <Route path='/profile/driver' element={<ProfileDriver/>} />
+    <Route path='/profile/:idDriver' element={<ProfileDriver/>} />
 
     <Route path='/error' element={<Error/>} />
     <Route path='/*' element={<NotFound/>} />

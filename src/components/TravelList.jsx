@@ -26,15 +26,23 @@ function TravelList() {
 
   return (
     
-    <div>
+    <div className='all'>
+    
+      
       {allTravels.map((eachTravel)=>{
-        return <p key={eachTravel._id}>
-        <Link to={`/travels/${eachTravel._id}/details`}>{eachTravel.from}-{eachTravel.to}</Link>  
-        </p>   
         
+        return(
+        <div className='div'>
+        <p key={eachTravel._id}>
+        <Link to={`/travels/${eachTravel._id}/details`} className='link'>{eachTravel.from}-{eachTravel.to}</Link>  
+        </p>  
+        </div>
+ 
+        ) 
       })}
+      </div>
 
-    </div>
+ 
   )
 }
 

@@ -65,7 +65,7 @@ function Login() {
         <br />
         {errorMessage ? <p>{errorMessage}</p>: null }
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" className="myButton">Login</button>
       </form>
       
     </div>

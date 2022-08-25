@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import MyTravels from '../../components/MyTravels'
-import GetReview from '../../components/GetReview'
+
 
 function Profile() {
   return (
     <div>
+    <h3>My Profile</h3>
     imagen de mi coche
-    <Link to= {'/travels/add'}> <button>Add Travel</button></Link>
+    <Link to= {'/travels/add'} className='link'> <button className="myButton">Add Travel</button></Link>
     <MyTravels/> 
-    <GetReview/>
+    
 
     </div>
   )

@@ -19,21 +19,21 @@ function Navbar() {
 
   if(isUserActive === true) {
    return(
-    <div>
-       <Link to='/'>Home </Link>
-       <Link to='/profile'>Profile </Link>
-       <button onClick={handleLogout}>Logout</button>
+    <div className='nav'>
+       <Link to='/' className='link'>Home </Link>
+       <Link to='/profile' className='link'>Profile </Link>
+       <button onClick={handleLogout} className="myButton">Logout</button>
     </div>
    ) 
   }else{
   }
   return (
-    <div>
+    <div className='nav'>
     
-    <Link to='/'>Home </Link>
+    <Link to='/' className='link'>Home </Link>
     {/*buscador aquí */}
-    <Link to='/signup'>Signup</Link>
-    <Link to='/login'>Login</Link>
+    <Link to='/signup' className='link'>Signup</Link>
+    <Link to='/login' className='link'>Login</Link>
 
     
     </div>

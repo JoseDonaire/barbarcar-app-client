@@ -69,7 +69,7 @@ function Signup() {
         <br />
         {errorMessage ? <p>{errorMessage}</p>: null }
         <br />
-        <button type="submit">Signup</button>
+        <button type="submit" className="myButton">Signup</button>
       </form>
       
     </div>

@@ -3,7 +3,7 @@ import TravelList from '../components/TravelList'
 
 function Home() {
   return (
-    <div>
+    <div className='all'>
     <h3>Travels List</h3>
     <TravelList/>
     

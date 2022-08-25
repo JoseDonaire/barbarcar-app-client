@@ -32,7 +32,7 @@ function Review() {
           <label htmlFor="text">Review</label>
           <input type="text" name='text' onChange={handleTextChange} value={text} />
         </form>
-        <button onClick={handleSubmit}>
+        <button onClick={handleSubmit} className="myButton" >
           Add
         </button>
     </div>

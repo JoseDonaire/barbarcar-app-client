@@ -1,7 +1,9 @@
 import React, { useEffect,useState } from 'react'
-import { travelDetailsService } from '../../services/travel.services'
-import { useParams,useNavigate } from 'react-router-dom'
+import { travelDetailsService, travelDetailsNavigatorService } from '../../services/travel.services'
+import { useParams,useNavigate,Link } from 'react-router-dom'
 import Review from '../../components/Review'
+
+
 
 function TravelDetails() {
 
@@ -9,7 +11,10 @@ function TravelDetails() {
 
   const {idTravel} = useParams()
 
+
   const [travel,setTravel]=useState([])
+
+
   const[isFetching,setIsFetching]=useState(true)
 
   useEffect(()=>{
@@ -28,9 +33,19 @@ function TravelDetails() {
     }
   }
 
+  const handleBookTrip = async ()=>{
+    try {
+    await travelDetailsNavigatorService(idTravel)
+    getTravel()
+    } catch (error) {
+      navigate('/error')
+    }
+  }
+
   if(isFetching === true){
     return <h3>...</h3>
   }
+
 
   return (
     <div>
@@ -42,8 +57,15 @@ function TravelDetails() {
       <p>Bags:{travel.bags}</p>
       <p>Seats Car:{travel.seatsCar}</p>
       <p>Price:{travel.price}</p>
-      <p>Owner:{travel.owner}</p> {/*enviar desde aquí al profile con un populate y un link */}
+      <Link to={`/profile/${travel.owner._id}`} className='link'><p>Owner:{travel.owner.username}</p></Link> {/*enviar desde aquí al profile con un populate y un link */}
+      
+      <p>Navigators: {travel.navigator.map((eachNavigator)=>{
+        return( 
+          <p ><Link to={`/profile/${eachNavigator._id}`} className='link' >{eachNavigator.username}</Link></p>
+        )
+      })}</p>
 
+      <button disabled={ travel.navigator.length === travel.seatsCar ? true : false} onClick={handleBookTrip} className="myButton" > Book Trip</button>
       <Review/>
     </div>
   )

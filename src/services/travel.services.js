@@ -8,6 +8,10 @@ const travelDetailsService = (idTravel)=>{
     return service.get(`/travels/${idTravel}`)
 }
 
+const travelDetailsNavigatorService = (idTravel)=>{
+    return service.patch(`/travels/${idTravel}/navigator`)
+}
+
 const addTravelService = (newTravel)=>{
     return service.post(`/travels/create`,newTravel)
 }
@@ -27,6 +31,7 @@ const travelDeleteService = (idTravel)=>{
 export{
     travelListService,
     travelDetailsService,
+    travelDetailsNavigatorService,
     addTravelService,
     myTravelService,
     travelUpdateService,

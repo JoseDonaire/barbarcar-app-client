@@ -1,4 +1,96 @@
 .App {
   text-align: center;
+  background: rgb(0, 96, 59);
+background: -moz-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(188, 207, 156) 100%);
+background: -webkit-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(188, 207, 156) 100%);
+background: -o-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(188, 207, 156) 100%);
+background: -ms-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(188, 207, 156) 100%);
+background: linear-gradient(57deg, rgb(0, 96, 59) 12%, rgb(188, 207, 156) 100%); 
+ padding: 0%;
+  margin: 0%;
+
+font-family: Arial, Helvetica, sans-serif;
+min-height: 100vh;
+
+
+
 }
 
+.navbar {
+  display: flex;
+  background: -moz-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(45, 62, 15) 100%);
+background: -webkit-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(45, 62, 15) 100%);
+background: -o-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(45, 62, 15) 100%);
+background: -ms-linear-gradient(327deg, rgb(0, 96, 59) 12%, rgb(45, 62, 15) 100%);
+background: linear-gradient(57deg, rgb(0, 96, 59) 12%, rgb(45, 62, 15) 100%); 
+  width: 100vw;
+  height: 2.5em;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.all{ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4em;
+  display: flex;
+  background: #ffffff;
+  box-sizing: border-box;
+  border: 2px solid black ;
+  gap: 1em;
+  max-width: 375px;
+  background: #C9C9C8;
+  padding: 30px;
+  margin: auto;
+  border-radius: 4px;
+  color: rgb(54, 53, 53);
+}
+
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:linear-gradient(to bottom, #89c403 5%, #31400d 100%);
+	background-color:#89c403;
+	border-radius:6px;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #31400d 5%, #89c403 100%);
+	background-color:#31400d;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
