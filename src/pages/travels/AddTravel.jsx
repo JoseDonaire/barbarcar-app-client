@@ -67,12 +67,12 @@ function AddTravel() {
         <input type="number" name='seatsCar' onChange={handleSeatsCarChange} value={seatsCar}/> 
         <br />
         <label htmlFor="price">Price</label>
-        <input type="number" name='price' onChange={handlePriceChange} value={price}/> 
+        <input type="number" name='price' onChange={handlePriceChange} value={price} /> 
 
         <br />
         
       </form>
-        <button onClick={handleSubmit}>Add</button>
+        <button onClick={handleSubmit} className="myButton">Add</button>
 
     </div>
   )

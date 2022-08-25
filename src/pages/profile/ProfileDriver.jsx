@@ -34,10 +34,12 @@ function ProfileDriver() {
 
   return (
     <div>
-    <h1>{profileDriver.username} Profile</h1>
+    <h1>{profileDriver.username} Reviews</h1>
+    <br />
 
     
     <Review/>
+    <br />
     <GetReview/>
     </div>
   )

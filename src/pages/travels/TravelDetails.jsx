@@ -49,22 +49,27 @@ function TravelDetails() {
 
   return (
     <div className="all">
+    <h4>Detalles del Viaje</h4>
       <div className="divdetails">
-        <h4>Detalles del Viaje</h4>
-        <p>Date:{travel.date}</p>
-        <p>From: {travel.from}</p>
-        <p>To: {travel.to}</p>
-        <p>Car: {travel.Car} </p>
-        <p>Bags:{travel.bags}</p>
-        <p>Seats Car:{travel.seatsCar}</p>
-        <p>Price:{travel.price}</p>
+        <p>Date:{travel.date}
+        <br />
+        From: {travel.from}
+        <br />
+        To: {travel.to}
+        <br />
+        Car: {travel.Car}
+        <br />
+        Bags:{travel.bags}
+        <br />
+        Seats Car:{travel.seatsCar}
+        <br />
+        Price:{travel.price}
+        </p>
         <Link to={`/profile/${travel.owner._id}`} className="link">
           <p>Owner:{travel.owner.username}</p>
-        </Link>{" "}
-        {/*enviar desde aquí al profile con un populate y un link */}
+        </Link>
       </div>
       <div className="divdetails">
-        {" "}
         <p>
           Navigators:{" "}
           {travel.navigator.map((eachNavigator) => {

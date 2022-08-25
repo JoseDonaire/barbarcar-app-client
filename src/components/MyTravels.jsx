@@ -51,6 +51,7 @@ function MyTravels() {
           <p key={eachTravel._id}>
         <Link to={`/travels/${eachTravel._id}/details`} className='link'>{eachTravel.from}-{eachTravel.to}</Link>
         <br />
+        <br />
         <Link to={`/travels/${eachTravel._id}/edit`} className='link'><button className="myButton">Edit</button></Link>
         <button onClick={()=>handleDelete(eachTravel._id)} className="myButton">Delete</button>  
         </p>   

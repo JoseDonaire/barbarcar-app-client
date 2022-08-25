@@ -31,13 +31,15 @@ function GetReview() {
       }
 
   return (
-    <div>
+    <div className='all'>
         {listReviews.map((eachReview)=>{
-            return <p key={eachReview._id}>
+            return(
+                <div className='div'><p key={eachReview._id}>
                 {eachReview.text}
             </p>
+            </div>
+            ) 
         })}
-
     </div>
   )
 }

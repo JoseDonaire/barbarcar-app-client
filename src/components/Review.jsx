@@ -29,8 +29,8 @@ function Review() {
   return (
     <div>
         <form >
-          <label htmlFor="text">Review</label>
-          <input type="text" name='text' onChange={handleTextChange} value={text} />
+          <label htmlFor="text"></label>
+          <input type="text" name='text' onChange={handleTextChange} value={text} className='div'/>
         </form>
         <button onClick={handleSubmit} className="myButton" >
           Add
