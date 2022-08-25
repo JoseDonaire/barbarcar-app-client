@@ -20,6 +20,7 @@ function Review() {
     try {
       const response = await newReviewService(idDriver,newReview)
       console.log('creado', response.data)
+      navigate('/profile')
     } catch (error) {
       navigate('/error')
     }
