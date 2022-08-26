@@ -1,43 +1,47 @@
-import React from 'react'
-import { useNavigate,useParams } from 'react-router-dom'
-import { useState } from 'react'
-import { newReviewService } from '../services/review.services'
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { newReviewService } from "../services/review.services";
 
 function Review() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
+  const { idDriver } = useParams();
 
-  const {idDriver} =useParams()
+  const [text, setText] = useState("");
 
-  const[text,setText]=useState('')
+  const handleTextChange = (event) => setText(event.target.value);
 
-  const handleTextChange = (event) => setText(event.target.value)
-
-  const handleSubmit = async () =>{
+  const handleSubmit = async () => {
     const newReview = {
-      text:text
-    }
+      text: text,
+    };
     try {
-      const response = await newReviewService(idDriver,newReview)
-      console.log('creado', response.data)
-      navigate('/profile')
+      const response = await newReviewService(idDriver, newReview);
+      console.log("creado", response.data);
+      navigate("/profile");
     } catch (error) {
-      navigate('/error')
+      navigate("/error");
     }
-  }
-  
+  };
 
   return (
     <div>
-        <form >
-          <label htmlFor="text"></label>
-          <input type="text" name='text' onChange={handleTextChange} value={text} className='div'/>
-        </form>
-        <button onClick={handleSubmit} className="myButton" >
-          Add
-        </button>
+      <form>
+        <label htmlFor="text"></label>
+        <input
+          type="text"
+          name="text"
+          onChange={handleTextChange}
+          value={text}
+          className="div"
+        />
+      </form>
+      <button onClick={handleSubmit} className="myButton">
+        Add
+      </button>
     </div>
-  )
+  );
 }
 
-export default Review
+export default Review;

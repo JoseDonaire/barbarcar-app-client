@@ -1,20 +1,15 @@
-import service from './config.services'
+import service from "./config.services";
 
-const signupService = (newUser)=>{
-    return service.post('/auth/signup', newUser)
-}
+const signupService = (newUser) => {
+  return service.post("/auth/signup", newUser);
+};
 
-const  loginService = (user)=>{
-    return service.post('/auth/login',user)
-}
+const loginService = (user) => {
+  return service.post("/auth/login", user);
+};
 
-const verifyService =()=>{
+const verifyService = () => {
+  return service.get("/auth/verify");
+};
 
-    return service.get('/auth/verify')
-}
-
-export{
-    signupService, 
-    loginService,
-    verifyService
-}
+export { signupService, loginService, verifyService };
